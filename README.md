@@ -4,6 +4,6 @@ An Complete Implementation over speech recognition and whisper to know their eff
 
 1) Download requiremts.txt as
 
-'''
+```
 pip install requirements.txt
-'''
+```
