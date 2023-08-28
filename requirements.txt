@@ -1,0 +1,7 @@
+streamlit
+sounddevice
+numpy
+wavio
+whisper
+pyaudio
+SpeechRecognition
