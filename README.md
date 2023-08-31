@@ -1,6 +1,9 @@
 # SpeechRecognition_vs_Whisper
 An Complete Implementation over speech recognition and whisper to know their effiecncy in Speech to Text modules as with Runtime Audio Recording
 
+SpeechRecognition.py is with SpeechRecognition module Code
+
+w.py is with Whisper module Code
 
 1) Download requiremts.txt as
 
