@@ -17,7 +17,7 @@ streamlit run SpeechRecognition.py
 3) Run the whisper.py for whisper module accuracy testing
 
 ```
-streamlit run whisper.py
+streamlit run w.py
 ```
 Optional 
 
