@@ -25,3 +25,5 @@ streamlit run w.py
 Optional 
 
 (you can run the recording.ipynb file for recording audio)
+
+If needed Install chocolately in your system @ Powershell to run Whisper in Local System
