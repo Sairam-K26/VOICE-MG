@@ -5,7 +5,9 @@ import wavio
 import whisper
 import os
 import base64
-
+import requests
+from bs4 import BeautifulSoup
+import time
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -24,7 +26,6 @@ def add_bg_from_local(image_file):
         unsafe_allow_html=True
     )
 
-
 def record_audio(output_filename, duration, sample_rate):
     st.write("Recording...")
     audio_data = sd.rec(int(duration * sample_rate),
@@ -36,8 +37,9 @@ def record_audio(output_filename, duration, sample_rate):
     wavio.write(output_filename, audio_data, sample_rate, sampwidth=2)
 
 def main():
-    st.title("Speech-to-Text using Whisper and Streamlit")
+    st.title("Speech-to-Text and Grammar Checking")
     add_bg_from_local("bg 1.png")
+
     # Sidebar input for recording duration
     recording_duration = st.sidebar.number_input("Recording Duration (seconds)", value=5, min_value=1)
 
@@ -54,13 +56,23 @@ def main():
             # Load the Whisper model
             model = whisper.load_model('small')
 
-            # Transcribe the audio using the loaded model
-            text = model.transcribe(output_file)
+            # Show the "Recording finished" message and start the spinner
+            st.write("Recording finished.")
+            with st.spinner("Processing your audio..."):
+                # Simulate processing delay (you can remove this)
+                time.sleep(2)
 
-            # Display the transcribed text
-            st.write("Transcribed Text:", text['text'])
+                # Transcribe the audio using the loaded model
+                transcribed_text = model.transcribe(output_file)
+
+            # Stop the spinner after transcription is complete
+            st.spinner(False)
+
+            st.success("Transcription Complete!")
+            st.write("Transcribed Text:")
+            st.write(transcribed_text['text'])
         else:
-            st.sidebar.write("Audio file not found.")
+            st.sidebar.write("Audio file not found. Please record audio first.")
 
 if __name__ == "__main__":
     main()
