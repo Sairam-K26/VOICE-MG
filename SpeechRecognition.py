@@ -1,7 +1,6 @@
 import streamlit as st
 import speech_recognition as sr
 
-
 def main():
     st.title("Speech to Text using Speech_Recognition")
 
