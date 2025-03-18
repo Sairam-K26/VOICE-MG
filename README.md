@@ -51,5 +51,10 @@ If needed Install chocolately in your system @ Powershell to run Whisper in Loca
 ```
 
 #Sample
+
 ![image](https://github.com/user-attachments/assets/a4558369-b603-4e42-9573-a30fef938982)
+
+
+
+
 https://youtu.be/YYsaPW_I9hc?feature=shared
